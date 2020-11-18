@@ -1,66 +1,76 @@
 import React, { useState } from 'react'
 import { Button, Paper, TextField, Typography } from '@material-ui/core'
-import {getUserById} from '../../api/usersApi';
+import { getUserByUsername } from '../../api/usersApi';
 import './Login.css'
 import { connect } from 'react-redux';
-import {login} from '../../redux/actions/auth'
+import { login } from '../../redux/actions/auth'
+import { Redirect } from 'react-router-dom'
 
 const Login = props => {
 
     const [error, setError] = useState(false);
     const [formState, setFormState] = useState({
-       username: '',
-       password:'',
+        username: '',
+        password: '',
     });
+    const [redirect, setRedirect] = useState(false)
 
-    const {username, password} = formState;
-    
+    const { username, password } = formState;
 
-    const handleInputChange = ({target}) => {
-        setFormState({...formState, [target.name]:target.value});
+
+    const handleInputChange = ({ target }) => {
+        setFormState({ ...formState, [target.name]: target.value });
     }
-    const handleOnSubmit = (e) => {
-        e.preventDefault();
+
+    const login = (e) => {
         if (username === "" || password === "") {
             setError("Fields are required");
             return;
-          }
-          props.login({ username, password });
+        }
+
+        getUserByUsername(username).then(
+            res => {
+                localStorage.setItem("user", JSON.stringify({ name: res.data[0].name }))
+                setRedirect(true)
+            }
+        )
     }
 
     return (
-        <Paper
-            className='login'
-            elevation={0}
+        <div className="login">
+            {redirect && <Redirect to="/" />}
+            <Paper
+                elevation={0}
             >
-            <Typography variant='h5' className='login__title'> Login </Typography>
-            <form className='form stack stack-s stack-v'>
-                <TextField
-                    onChange={handleInputChange} 
-                    className='input stack__item' 
-                    required 
-                    label='Usuario' 
-                    type='text' 
-                    name='username' 
-                    variant='outlined'
+                <Typography variant='h5' className='login__title'> Login </Typography>
+                <div className='form stack stack-s stack-v'>
+                    <TextField
+                        onChange={handleInputChange}
+                        className='input stack__item'
+                        required
+                        label='Usuario'
+                        type='text'
+                        name='username'
+                        variant='outlined'
                     />
-                <TextField 
-                    onChange={handleInputChange} 
-                    className='input stack__item' 
-                    required 
-                    label='Contraseña' 
-                    type='password' 
-                    name='password' 
-                    variant='outlined' />
-                <Button 
-                    onSubmit={handleOnSubmit}
-                    className='login__submit-button' 
-                    variant="contained" 
-                    color="primary">
-                    Entrar
+                    <TextField
+                        onChange={handleInputChange}
+                        className='input stack__item'
+                        required
+                        label='Contraseña'
+                        type='password'
+                        name='password'
+                        variant='outlined' />
+                    <Button
+                        onClick={login}
+                        className='login__submit-button'
+                        variant="contained"
+                        color="primary">
+                        Entrar
                 </Button>
-            </form>
-        </Paper>
+                </div>
+            </Paper>
+        </div>
     )
 }
 

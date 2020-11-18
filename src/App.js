@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from 'react';
 
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { Provider } from "react-redux";
 import { applyMiddleware } from "redux";
@@ -10,25 +10,20 @@ import { createStore } from "redux";
 
 import Login from './views/Login/Login';
 import { MainView } from './views/MainView/MainView';
-import AuthRoute from "./components/AuthRoute";
 import { appMiddleware } from "./redux/middlewares/app";
 import { apiMiddleware } from "./redux/middlewares/core";
 
 import { importGenericCss } from './genericCssImports'
 import { composeWithDevTools } from "redux-devtools-extension";
+import PatientsModule from "./views/PatientsModule/PatientsModule";
 
-// const createStoreWithMiddleware = applyMiddleware(
-//   appMiddleware,
-//   apiMiddleware
-// )(createStore);
 
-// const store = createStoreWithMiddleware(reducer);
 
 const store = createStore(
-  reducer, 
+  reducer,
   composeWithDevTools(
-  applyMiddleware(appMiddleware,apiMiddleware),
-));
+    applyMiddleware(appMiddleware, apiMiddleware),
+  ));
 
 function App() {
   useEffect(() => {
@@ -38,12 +33,14 @@ function App() {
   return (
     <div className='app'>
       <Provider store={store}>
-        <Router exact path='/'>
+        <Router>
           <Switch>
-            <AuthRoute path="/home" render={MainView} type="private" />
-            <AuthRoute path="/login" type="guest">
+            {/* <Route path="/home" render={MainView} /> */}
+            <Route path="/login" >
               <Login />
-            </AuthRoute>
+            </Route>
+            <Route exact path="/" render={MainView} />
+            <Route exact path='/pacientes' component={PatientsModule}></Route>
           </Switch>
         </Router>
       </Provider>
