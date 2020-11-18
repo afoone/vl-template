@@ -1,0 +1,40 @@
+:root{
+    --spacing-default-size:4;
+
+    --spacing-xs: calc(var(--spacing-default-size) * 1px);
+    --spacing-s: calc(var(--spacing-default-size) * 2px);
+    --spacing-m: calc(var(--spacing-default-size) * 4px);
+    --spacing-l: calc(var(--spacing-default-size) * 6px);
+}
+
+.stack{
+    --stack-spacing: var(--spacing-default-size);
+    display: flex;
+}
+
+.stack-xs{
+    --stack-spacing: var(--spacing-xs);
+}
+.stack-s{
+    --stack-spacing: var(--spacing-s);
+}
+.stack-m{
+    --stack-spacing: var(--spacing-m);
+}
+.stack-l{
+    --stack-spacing: var(--spacing-l);
+}
+
+.stack-h {
+    flex-direction: row;
+}
+.stack-v {
+    flex-direction: column;
+}
+
+.stack-h > .stack__item + .stack__item {
+    margin-left: var(--stack-spacing);
+}
+.stack-v > .stack__item + .stack__item{
+    margin-top: var(--stack-spacing);
+}

@@ -1,0 +1,17 @@
+.login{
+    height: fit-content;
+    text-align: center;
+}
+.login__title{
+    /* display: block; */
+    text-transform: uppercase;
+    margin-bottom: 32px!important;
+}
+.login > form {
+    text-align: center;
+}
+
+.login__submit-button{
+    font-size: 18px!important;
+    margin-top: var(--spacing-m)!important;
+}

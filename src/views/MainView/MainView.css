@@ -1,0 +1,13 @@
+.main-view {
+    display: flex;
+    flex-direction: column;
+}
+.main-view__header {
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-height: 10vh;
+}
+.main-view__content{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
