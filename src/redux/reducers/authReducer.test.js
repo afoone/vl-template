@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from '../actions/auth'
+import { ERROR, LOGIN, LOGOUT } from '../actions/auth'
 import authReducer from './authReducer'
 
 test(
@@ -13,10 +13,8 @@ test(
     "login incluye el usuario en el estado",
     () => {
         const state = authReducer({}, { type: LOGIN, payload: { name: "Javi" } })
-        expect(state).toStrictEqual({
-            user: {
-                name: "Javi"
-            }
+        expect(state.user).toStrictEqual({
+            name: "Javi"
         })
     }
 )
@@ -30,10 +28,8 @@ test(
             }
         }
         const state = authReducer(initialState, { type: LOGIN, payload: { name: "Alfonso" } })
-        expect(state).toStrictEqual({
-            user: {
-                name: "Alfonso"
-            }
+        expect(state.user).toStrictEqual({
+            name: "Alfonso"
         })
     }
 )
@@ -48,7 +44,43 @@ test(
         }
         const state = authReducer(initialState, { type: LOGOUT })
         expect(state.user).toBeFalsy()
+    }
+)
 
+test(
+    "error",
+    () => {
+        const initialState = {
+
+        }
+        const state = authReducer(initialState, { type: ERROR, payload: "los campos están vacíos" })
+        expect(state).toStrictEqual(
+            {
+                error: "los campos están vacíos"
+            }
+        )
+    }
+)
+
+test(
+    "no hay error si hacemos login",
+    () => {
+        const initialState = {
+            error: "hola"
+        }
+        const state = authReducer(initialState, { type: LOGIN, payload: {} })
+        expect(state.error).toBeFalsy()
+    }
+)
+
+test(
+    "no hay error si hacemos logout",
+    () => {
+        const initialState = {
+            error: "hola"
+        }
+        const state = authReducer(initialState, { type: LOGOUT, payload: {} })
+        expect(state.error).toBeFalsy()
     }
 )
 
@@ -56,3 +88,4 @@ test(
 //     *.spec.js
 // __test__
 // testing library / enzyme
+

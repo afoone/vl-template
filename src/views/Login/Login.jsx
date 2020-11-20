@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import { Button, Paper, TextField, Typography } from '@material-ui/core'
-import { getUserByUsername } from '../../api/usersApi';
 import './Login.css'
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/actions/auth'
 import { Redirect } from 'react-router-dom'
 
+
 const Login = props => {
 
-    const [error, setError] = useState(false);
+    const dispatch = useDispatch()
+    const error = useSelector(state => state.auth.error)
+    const user = useSelector(state => state.auth.user)
+
     const [formState, setFormState] = useState({
         username: '',
         password: '',
     });
-    const [redirect, setRedirect] = useState(false)
 
     const { username, password } = formState;
 
@@ -22,27 +24,18 @@ const Login = props => {
         setFormState({ ...formState, [target.name]: target.value });
     }
 
-    const login = (e) => {
-        if (username === "" || password === "") {
-            setError("Fields are required");
-            return;
-        }
-
-        getUserByUsername(username).then(
-            res => {
-                localStorage.setItem("user", JSON.stringify({ name: res.data[0].name }))
-                setRedirect(true)
-            }
-        )
+    const doLogin = () => {
+        dispatch(login(username))
     }
 
     return (
         <div className="login">
-            {redirect && <Redirect to="/" />}
+            {user.name && <Redirect to="/" />}
             <Paper
                 elevation={0}
             >
                 <Typography variant='h5' className='login__title'> Login </Typography>
+                {error && <div>{error}</div>}
                 <div className='form stack stack-s stack-v'>
                     <TextField
                         onChange={handleInputChange}
@@ -62,7 +55,7 @@ const Login = props => {
                         name='password'
                         variant='outlined' />
                     <Button
-                        onClick={login}
+                        onClick={doLogin}
                         className='login__submit-button'
                         variant="contained"
                         color="primary">

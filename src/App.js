@@ -4,25 +4,25 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { Provider } from "react-redux";
-import { applyMiddleware } from "redux";
-import reducer from "./redux/reducer";
+import { applyMiddleware, compose } from "redux";
+import reducer from "./redux/reducers/";
 import { createStore } from "redux";
+import thunk from 'redux-thunk';
 
 import Login from './views/Login/Login';
 import { MainView } from './views/MainView/MainView';
-import { appMiddleware } from "./redux/middlewares/app";
-import { apiMiddleware } from "./redux/middlewares/core";
 
 import { importGenericCss } from './genericCssImports'
-import { composeWithDevTools } from "redux-devtools-extension";
 
 
+const composeEnhancers =
+  (typeof window !== "undefined" &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
 
 const store = createStore(
   reducer,
-  composeWithDevTools(
-    applyMiddleware(appMiddleware, apiMiddleware),
-  ));
+  composeEnhancers(applyMiddleware(thunk)));
 
 function App() {
   useEffect(() => {
