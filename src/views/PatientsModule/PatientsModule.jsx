@@ -13,9 +13,7 @@ const PatientsModule = () => {
     const patients = useSelector(state => state.patients)
     const dispatch = useDispatch()
 
-    const savePatient = (patient) => {
-        dispatch(addPatient(patient))
-    }
+    const savePatient = patient => dispatch(addPatient(patient))
 
     const rows = [
         {
@@ -30,11 +28,7 @@ const PatientsModule = () => {
             turno: 1,
             sexo: 'Hombre'
         }
-    ];
-
-    useEffect(() => {
-        setPatients()
-    }, [])
+    ]
 
     const columns = [
         { field: 'apellidos', headerName: 'Apellidos', width: 150 },
@@ -46,9 +40,7 @@ const PatientsModule = () => {
         { field: 'fnac', headerName: 'F.Nacim.', width: 150 },
         { field: 'turno', headerName: 'Turno', width: 150 },
         { field: 'sexo', headerName: 'Sexo', width: 150 },
-    ];
-
-
+    ]
 
     const addRowToSelecteds = (rowData) => {
         setRowsSelecteds(rowsSelecteds.concat(rowData))
@@ -105,5 +97,4 @@ const PatientsModule = () => {
         </Box>
     )
 }
-export default PatientsModule;
-
+export default PatientsModule
