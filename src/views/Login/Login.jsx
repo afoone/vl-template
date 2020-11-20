@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 import { Button, Paper, TextField, Typography } from '@material-ui/core'
 import './Login.css'
 import { connect, useDispatch, useSelector } from 'react-redux';
-import { login } from '../../redux/actions/auth'
+import { loginAsync } from '../../redux/actions/auth'
 import { Redirect } from 'react-router-dom'
 
 
 const Login = props => {
-
-    const dispatch = useDispatch()
+const dispatch = useDispatch()
     const error = useSelector(state => state.auth.error)
     const user = useSelector(state => state.auth.user)
 
@@ -22,10 +21,6 @@ const Login = props => {
 
     const handleInputChange = ({ target }) => {
         setFormState({ ...formState, [target.name]: target.value });
-    }
-
-    const doLogin = () => {
-        dispatch(login(username))
     }
 
     return (
@@ -55,7 +50,7 @@ const Login = props => {
                         name='password'
                         variant='outlined' />
                     <Button
-                        onClick={doLogin}
+                        onClick={dispatch(loginAsync(username))}
                         className='login__submit-button'
                         variant="contained"
                         color="primary">
@@ -69,4 +64,4 @@ const Login = props => {
 
 const mapStateToProps = ({ isLoading }) => ({ isLoading })
 
-export default connect(mapStateToProps, { login })(Login)
+export default connect(mapStateToProps, { loginAsync })(Login)

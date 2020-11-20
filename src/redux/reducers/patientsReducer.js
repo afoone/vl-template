@@ -1,8 +1,8 @@
 import {
     ADD_PATIENT,
+    ADD_PATIENTS,
     EDIT_PATIENT,
     DELETE_PATIENT
-    // GET_PATIENTS
 } from '../actions/patientsActions'
 
 const reducer = (state = {}, action) => {
@@ -10,17 +10,17 @@ const reducer = (state = {}, action) => {
     const {type, payload} = action
 
     switch (type) {
-        // case GET_PATIENTS:
-        //     return patients;
         case ADD_PATIENT:
             return { ...state, patients: [...patients, payload]}
+        case ADD_PATIENTS:
+            return { ...state, patients: [...patients, ...payload]}
         case EDIT_PATIENT:
-            patients.forEach((patient,i)=> {
+            patients.forEach((patient,i)=>{
                 if (patient.id === payload.id) {
                     patients[i] = payload
                 }
             });
-            return { ...state, }
+            return { ...state }
         case DELETE_PATIENT:
             return { 
                 ...state,
@@ -30,5 +30,4 @@ const reducer = (state = {}, action) => {
             return state;
     }
 }
-
 export default reducer

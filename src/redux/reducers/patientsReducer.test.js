@@ -2,7 +2,8 @@ import reducer from './patientsReducer';
 import {
     addPatient,
     editPatient,
-    deletePatient
+    deletePatient,
+    addPatients
 } from '../actions/patientsActions';
 
 
@@ -120,33 +121,47 @@ test('Dado un paciente y un estado con un array de pacientes que incluyen el pac
     const result = reducer(initialState, deletePatient(2))
     expect(result).toStrictEqual(expectedResult)
 })
-// test('Deberia retornar todos los pacientes del estado', () => {
-//     const initialState = {
-//         user: {
-//             name: "Alfonso"
-//         },
-//         patients: [
-//             {
-//                 id: 1,
-//                 nombre: 'Pepe'
-//             },
-//             {
-//                 id: 2,
-//                 nombre: 'Javi'
-//             }
-//         ]
-//     }
-//     const expectedResult = {
-//         user: {
-//             name: "Alfonso"
-//         },
-//         patients: [
-//             {
-//                 id: 1,
-//                 nombre: 'Pepe'
-//             },
-//         ]
-//     }
-//     const result = reducer(initialState, deletePatient(2))
-//     expect(result).toStrictEqual(expectedResult)
-// })
+test('Anyadir multiples pacientes', () => {
+    const initialState = {
+        user: {
+            name: "Alfonso"
+        },
+        patients: [
+            {
+                id: 1,
+                nombre: 'Pepe'
+            },
+            {
+                id: 2,
+                nombre: 'Javi'
+            }
+        ]
+    }
+    const patientToAdd = [{
+        id: 3,
+        nombre: 'Pedro'
+    },
+    {
+        id: 4,
+        nombre: 'Pablo'
+    }]
+
+    const expectedResult = {
+        user: {
+            name: "Alfonso"
+        },
+        patients: [
+            {
+                id: 1,
+                nombre: 'Pepe'
+            },
+            {
+                id: 2,
+                nombre: 'Javi'
+            },
+            ...patientToAdd
+        ]
+    }
+    const result = reducer(initialState, addPatients(patientToAdd))
+    expect(result).toStrictEqual(expectedResult)
+})

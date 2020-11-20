@@ -19,21 +19,27 @@ const commitLogin = user => {
     type: LOGIN,
     payload: user
   };
-
 };
 
-export const login = (dispatch, username, password) => {
-  getUserByUsername(username).then(
-    res => {
-      const user = res.data[0];
-      dispatch(commitLogin(user))
-    }
-  ).catch(
-    dispatch({
-      type: ERROR,
-      payload: "no se ha podido conectar con el servidor"
-    })
-  )
+// export const login = (dispatch, username, password) => {
+//   getUserByUsername(username).then(
+//     ({ data }) => {
+//       const user = data[0];
+//       dispatch(commitLogin(user))
+//     }
+//   ).catch(
+//     dispatch({
+//       type: ERROR,
+//       payload: "No se ha podido conectar con el servidor"
+//     })
+//   )
+// }
+export const loginAsync = (username, password) => {
+  return function(dispatch){
+    return getUserByUsername(username).then(
+      (res) => dispatch(commitLogin(res.data.user))
+    )
+  }
 }
 
 export const logout = () => {
