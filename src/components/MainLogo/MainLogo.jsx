@@ -1,10 +1,16 @@
 import React from 'react'
-import { Box } from '@material-ui/core'
+import './MainLogo.css';
 
 export const MainLogo = () => {
+    const logoPath = process.env.PUBLIC_URL + 'assets/img/'
+
     return (
-        <div>
-            <img src="#" alt="Logo nefro"/>
+        <div className='main-logo'>
+            {/* <img 
+                src={`${logoPath}nefrologo.jfif`} 
+                alt="Logo nefro"/
+            > */}
+            Nefrosoft logo
         </div>
     )
 }

@@ -1,0 +1,13 @@
+.modules-main-header{
+    display: flex;
+    background-color: inherit;
+}
+.modules-main-header .MuiBottomNavigation-root{
+    background-color: inherit;
+}
+.modules-main-header .MuiBottomNavigationAction-root {
+    /* color: rgb(172, 172, 172)!important; */
+}
+.Mui-selected {
+    color: rgb(199, 214, 255)!important;
+}

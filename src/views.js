@@ -1,0 +1,2 @@
+export const PATIENTS_VIEW = 'PATIENTS_VIEW';
+export const CONTROL_AGUAS_VIEW = 'CONTROL_AGUAS_VIEW';

@@ -1,3 +1,6 @@
 .main-header{
     display: flex;
 }
+.main-header__logout{
+    margin-left: auto;
+}

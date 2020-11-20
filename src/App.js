@@ -15,7 +15,6 @@ import { apiMiddleware } from "./redux/middlewares/core";
 
 import { importGenericCss } from './genericCssImports'
 import { composeWithDevTools } from "redux-devtools-extension";
-import PatientsModule from "./views/PatientsModule/PatientsModule";
 
 
 
@@ -39,8 +38,9 @@ function App() {
             <Route path="/login" >
               <Login />
             </Route>
-            <Route exact path="/" render={MainView} />
-            <Route exact path='/pacientes' component={PatientsModule}></Route>
+            <Route exact path="/">
+              <MainView></MainView>
+            </Route>
           </Switch>
         </Router>
       </Provider>

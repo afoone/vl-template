@@ -1,13 +1,15 @@
 .main-view {
     display: flex;
     flex-direction: column;
+    min-width: 100vw;
+    min-height: 100vh;
 }
-.main-view__header {
+.main-view__main-header {
     flex-grow: 0;
     flex-shrink: 0;
-    max-height: 10vh;
+    max-height: 15vh;
 }
-.main-view__content{
+.main-view__main-content{
     flex-grow: 1;
     flex-shrink: 1;
 }
