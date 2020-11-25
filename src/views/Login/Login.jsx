@@ -20,8 +20,9 @@ const Login = props => {
 
 
     const handleInputChange = ({ target }) => {
-        setFormState({ ...formState, [target.name]: target.value });
+        setFormState({ ...formState, [target.name]: target.value.toUpperCase() });
     }
+
 
     return (
         <div className="login">
@@ -40,6 +41,7 @@ const Login = props => {
                         type='text'
                         name='username'
                         variant='outlined'
+                        value={formState.username}
                     />
                     <TextField
                         onChange={handleInputChange}

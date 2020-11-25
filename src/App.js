@@ -13,6 +13,7 @@ import Login from './views/Login/Login';
 import { MainView } from './views/MainView/MainView';
 
 import { importGenericCss } from './genericCssImports'
+import PatientForm from "./components/forms/PatientForm";
 
 
 const composeEnhancers =
@@ -37,6 +38,9 @@ function App() {
             {/* <Route path="/home" render={MainView} /> */}
             <Route path="/login" >
               <Login />
+            </Route>
+            <Route path="/patient/new">
+              <PatientForm></PatientForm>
             </Route>
             <Route exact path="/">
               <MainView></MainView>

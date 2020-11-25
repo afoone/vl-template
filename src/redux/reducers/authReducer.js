@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
         case LOGIN:
             return { ...state, user: action.payload, error: undefined }
         case LOGOUT:
-            return { ...state, user: undefined, error: undefined }
+            return { ...state, user: {}, error: undefined }
         case ERROR:
             return { ...state, error: action.payload }
         default:
