@@ -5,7 +5,9 @@ export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 export const ERROR = "ERROR"
 
-const commitLogin = user => {
+export const commitLogin = user => {
+
+  console.log("commit login", user)
 
   if (!user || user.name === "" || user.password === "") {
     return {
@@ -22,9 +24,10 @@ const commitLogin = user => {
 };
 
 export const loginAsync = (username, password) => {
-  return function(dispatch){
+  return function (dispatch) {
+    console.log("login async", username)
     return getUserByUsername(username).then(
-      (res) => dispatch(commitLogin(res.data.user))
+      res => dispatch(commitLogin(res.data[0]))
     )
   }
 }

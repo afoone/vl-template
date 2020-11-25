@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { Button, Paper, TextField, Typography } from '@material-ui/core'
 import './Login.css'
 import { connect, useDispatch, useSelector } from 'react-redux';
-import { loginAsync } from '../../redux/actions/auth'
+import { loginAsync, commitLogin } from '../../redux/actions/auth'
 import { Redirect } from 'react-router-dom'
 
 
 const Login = props => {
-const dispatch = useDispatch()
+    const dispatch = useDispatch()
     const error = useSelector(state => state.auth.error)
     const user = useSelector(state => state.auth.user)
 
@@ -20,8 +20,9 @@ const dispatch = useDispatch()
 
 
     const handleInputChange = ({ target }) => {
-        setFormState({ ...formState, [target.name]: target.value });
+        setFormState({ ...formState, [target.name]: target.value.toUpperCase() });
     }
+
 
     return (
         <div className="login">
@@ -40,6 +41,7 @@ const dispatch = useDispatch()
                         type='text'
                         name='username'
                         variant='outlined'
+                        value={formState.username}
                     />
                     <TextField
                         onChange={handleInputChange}
@@ -50,7 +52,7 @@ const dispatch = useDispatch()
                         name='password'
                         variant='outlined' />
                     <Button
-                        onClick={dispatch(loginAsync(username))}
+                        onClick={() => dispatch(loginAsync(username))}
                         className='login__submit-button'
                         variant="contained"
                         color="primary">
