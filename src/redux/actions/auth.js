@@ -21,19 +21,6 @@ const commitLogin = user => {
   };
 };
 
-// export const login = (dispatch, username, password) => {
-//   getUserByUsername(username).then(
-//     ({ data }) => {
-//       const user = data[0];
-//       dispatch(commitLogin(user))
-//     }
-//   ).catch(
-//     dispatch({
-//       type: ERROR,
-//       payload: "No se ha podido conectar con el servidor"
-//     })
-//   )
-// }
 export const loginAsync = (username, password) => {
   return function(dispatch){
     return getUserByUsername(username).then(
