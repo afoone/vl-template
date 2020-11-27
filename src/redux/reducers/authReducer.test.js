@@ -43,7 +43,7 @@ test(
             }
         }
         const state = authReducer(initialState, { type: LOGOUT })
-        expect(state.user).toBeFalsy()
+        expect(state.user.name).toBeFalsy()
     }
 )
 

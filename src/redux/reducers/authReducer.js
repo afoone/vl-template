@@ -19,15 +19,3 @@ const reducer = (state = initialState, action) => {
 }
 
 export default reducer
-
-
-// {
-//     auth: { 
-//         user: {
-//             name: "Javi",
-//             rol: "admin"
-//         },
-//         token: "09398402934809"
-//      },
-//     patient: {nomvbre: 2}
-// }

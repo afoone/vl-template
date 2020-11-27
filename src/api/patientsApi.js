@@ -2,6 +2,7 @@ import { AxiosSingleton } from './AxiosSingleton'
 
 let axiosInstance = AxiosSingleton.getInstance();
 
-export const getUserById = (id) => {
-    return axiosInstance.get(`/users/${id}`);
-}
+export const getPatientById = id => axiosInstance.get(`/patient/${id}`);
+
+export const getAllPatients = () => axiosInstance.get(`/patients/`);
+

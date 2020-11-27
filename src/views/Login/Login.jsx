@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button, Paper, TextField, Typography } from '@material-ui/core'
 import './Login.css'
 import { connect, useDispatch, useSelector } from 'react-redux';
-import { loginAsync, commitLogin } from '../../redux/actions/auth'
+import { loginAsync } from '../../redux/actions/auth'
 import { Redirect } from 'react-router-dom'
 
 
@@ -20,13 +20,13 @@ const Login = props => {
 
 
     const handleInputChange = ({ target }) => {
-        setFormState({ ...formState, [target.name]: target.value.toUpperCase() });
+        setFormState({ ...formState, [target.name]: target.value});
     }
 
 
     return (
         <div className="login">
-            {user.name && <Redirect to="/" />}
+            {user.name && <Redirect to="/"/>}
             <Paper
                 elevation={0}
             >

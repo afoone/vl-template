@@ -6,5 +6,55 @@
       "password": "javi",
       "rol": "admin"
     }
-  ]
+  ],
+  "patients": [
+    {
+        "id": 1, 
+        "apellidos": "Garcia M",
+        "nombre": "Pepe", 
+        "nreg": 123124,
+        "nss": 4345,
+        "sip": 123141324235,
+        "nhist": 123412,
+        "fnac": "09/09/1993",
+        "turno": 1,
+        "sexo": "Hombre"
+    },
+    {
+        "id": 2, 
+        "apellidos": "Garcia M",
+        "nombre": "Andrea", 
+        "nreg": 123124,
+        "nss": 4345,
+        "sip": 123141324235,
+        "nhist": 123412,
+        "fnac": "09/09/1993",
+        "turno": 1,
+        "sexo": "Hombre"
+    },
+    {
+        "id": 3, 
+        "apellidos": "Garcia M",
+        "nombre": "Cristina", 
+        "nreg": 123124,
+        "nss": 4345,
+        "sip": 123141324235,
+        "nhist": 123412,
+        "fnac": "09/09/1993",
+        "turno": 1,
+        "sexo": "Hombre"
+    },
+    {
+        "id": 4, 
+        "apellidos": "Garcia M",
+        "nombre": "Filomena", 
+        "nreg": 123124,
+        "nss": 4345,
+        "sip": 123141324235,
+        "nhist": 123412,
+        "fnac": "09/09/1993",
+        "turno": 1,
+        "sexo": "Hombre"
+    }
+]
 }
