@@ -6,11 +6,9 @@ export const MainLogo = () => {
 
     return (
         <div className='main-logo'>
-            {/* <img 
-                src={`${logoPath}nefrologo.jfif`} 
-                alt="Logo nefro"/
-            > */}
-            Nefrosoft logo
+            <img
+                src={`/assets/img/nefrosoft-logo.png`}
+                alt="Logo nefro" />
         </div>
     )
 }

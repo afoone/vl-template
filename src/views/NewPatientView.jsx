@@ -36,7 +36,7 @@ const initialFormState = {
   nombre: '',
   apellidos: '',
   nHistoria: '',
-  nss:'',
+  nss: '',
   sip: '',
   sexo: '',
   fechaNac: '',
@@ -75,7 +75,6 @@ const NewPatientView = () => {
         <IconButton>
           <ArrowBack />
         </IconButton>
-
         <Typography variant='h5'> Nuevo paciente </Typography>
       </Box>
       <Paper>

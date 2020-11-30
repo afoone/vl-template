@@ -1,6 +1,12 @@
-.main-logo  {
+.main-logo {
     margin-right: 60px;
 }
+
+
 .main-logo img {
-    
+    max-height: 50px;
+    padding: 5px;
+    /* color: black; */
+    /* filter: grayscale(100%); */
+    filter: brightness(0.95);
 }
