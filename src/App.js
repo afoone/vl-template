@@ -12,7 +12,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className='app' style={{backgroundColor:"#edecec"}}>
+    <div className='app'>
       <Router>
         <Switch>
           <Route path='/patients'>
