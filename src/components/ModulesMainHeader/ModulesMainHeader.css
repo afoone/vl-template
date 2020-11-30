@@ -1,13 +1,17 @@
-.modules-main-header{
+.modules-main-header {
     display: flex;
     background-color: inherit;
 }
-.modules-main-header .MuiBottomNavigation-root{
+
+.modules-main-header .MuiBottomNavigation-root {
     background-color: inherit;
 }
-.modules-main-header .MuiBottomNavigationAction-root {
-    /* color: rgb(172, 172, 172)!important; */
-}
+
 .Mui-selected {
-    color: rgb(199, 214, 255)!important;
+    color: rgb(199, 214, 255) !important;
+}
+
+.modules-main-header .MuiBottomNavigationAction-label.MuiBottomNavigationAction-iconOnly {
+    opacity: 1;
+    transition-delay: 0s;
 }
