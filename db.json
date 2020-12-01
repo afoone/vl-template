@@ -10,13 +10,13 @@
   "patients": [
     {
       "id": 1,
-      "apellidos": "Garcia M",
       "nombre": "Pepe",
+      "apellidos": "Garcia M",
       "nreg": 123124,
       "nss": 4345,
       "sip": 123141324235,
       "nhist": 123412,
-      "fnac": "09/09/1993",
+      "fnac": "2014-02-01",
       "turno": 1,
       "sexo": "Hombre"
     },
@@ -46,13 +46,13 @@
     },
     {
       "id": 4,
-      "apellidos": "Garcia M",
       "nombre": "Filomena",
+      "apellidos": "Garcia M",
       "nreg": 123124,
       "nss": 4345,
       "sip": 123141324235,
       "nhist": 123412,
-      "fnac": "09/09/1993",
+      "fnac": "1958-04-02",
       "turno": 1,
       "sexo": "Hombre"
     },
