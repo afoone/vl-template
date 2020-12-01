@@ -22,12 +22,7 @@ const reducer = (state = initialState, action) => {
     case ADD_PATIENTS_OVERWRITING:
       return { ...state, patients: [...payload] };
     case EDIT_PATIENT:
-      patients.forEach((patient, i) => {
-        if (patient.id === payload.id) {
-          patients[i] = payload;
-        }
-      });
-      return { ...state };
+      return { ...state, patients: [...state.patients.filter(i => i.id !== payload.id), payload] };
     case DELETE_PATIENT:
       return {
         ...state,

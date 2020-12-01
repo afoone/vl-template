@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './views/Login/Login';
 import { MainView } from './views/MainView/MainView';
 import { importGenericCss } from './genericCssImports';
-import PatientForm from './components/forms/PatientForm';
 
 const App = () => {
   useEffect(() => {

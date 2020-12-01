@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Logout } from '../Logout/Logout';
 import { MainLogo } from '../MainLogo/MainLogo';
 import { ModulesMainHeader } from '../ModulesMainHeader/ModulesMainHeader';
 import Language from '../Language/Language'
-import { AppBar, Box, Button, IconButton, Toolbar } from '@material-ui/core';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { AppBar, Box, Button, Toolbar } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { logout } from '../../redux/actions/auth'
 
