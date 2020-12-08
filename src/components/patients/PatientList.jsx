@@ -70,9 +70,7 @@ const PatientList = ({ edit }) => {
                             cellRenderer: 'genderCellRenderer',
                         }}
                     ></AgGridColumn>
-                    <AgGridColumn field="id" cellRenderer="ButtonsClickRenderer"
-
-                    ></AgGridColumn>
+                    <AgGridColumn field="id" cellRenderer="ButtonsClickRenderer"></AgGridColumn>
 
                 </AgGridReact>
             </div>

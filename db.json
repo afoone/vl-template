@@ -66,7 +66,7 @@
       "nhist": "234",
       "fnac": "2020-12-11",
       "turno": "1",
-      "sexo": "Mujer"
+      "sexo": "Hombre"
     },
     {
       "nombre": "dd",
@@ -91,6 +91,87 @@
       "turno": "2",
       "sexo": "Hombre",
       "id": 7
+    },
+    {
+      "nombre": "dd",
+      "apellidos": "",
+      "nreg": "",
+      "nss": "",
+      "sip": "",
+      "nhist": "",
+      "fnac": "",
+      "turno": "",
+      "sexo": "Hombre",
+      "id": 8
+    },
+    {
+      "nombre": "dd",
+      "apellidos": "",
+      "nreg": "",
+      "nss": "",
+      "sip": "",
+      "nhist": "",
+      "fnac": "",
+      "turno": "",
+      "sexo": "Hombre",
+      "id": 9
+    },
+    {
+      "nombre": "",
+      "apellidos": "",
+      "nreg": "",
+      "nss": "",
+      "sip": "",
+      "nhist": "",
+      "fnac": "",
+      "turno": "",
+      "sexo": "Hombre",
+      "id": 10
+    },
+    {
+      "nombre": "d",
+      "apellidos": "d",
+      "nreg": "d",
+      "nss": "d",
+      "sip": "33",
+      "nhist": "34",
+      "fnac": "2020-12-04",
+      "turno": "2",
+      "id": 11
+    },
+    {
+      "nombre": "Juan",
+      "apellidos": "kldj",
+      "nreg": "sdkjf",
+      "nss": "ldksjl",
+      "sip": "9lksdfjl",
+      "nhist": "kjdsfl",
+      "fnac": "2019-01-01",
+      "turno": "3",
+      "sexo": "Hombre",
+      "id": 12
+    },
+    {
+      "nombre": "",
+      "apellidos": "",
+      "nreg": "",
+      "nss": "",
+      "sip": "",
+      "nhist": "",
+      "fnac": "",
+      "turno": "",
+      "id": 13
+    },
+    {
+      "nombre": "s",
+      "apellidos": "s",
+      "nreg": "",
+      "nss": "",
+      "sip": "3455667",
+      "nhist": "",
+      "fnac": "",
+      "turno": "",
+      "id": 14
     }
   ]
 }

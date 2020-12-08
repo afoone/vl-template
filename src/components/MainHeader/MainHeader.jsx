@@ -22,11 +22,9 @@ const MainHeader = ({ changeView }) => {
                     <MainLogo />
                     <ModulesMainHeader changeView={changeView} />
                     {!user.name && <Redirect to="/login" />}
-                    <Box>
-                        Usuario: {user.name}
-                    </Box>
                     <Box ml='auto'>
                         <Button onClick={() => dispatch(logout())}>
+                            {user.name}
                             <Logout />
                         </Button>
                     </Box>

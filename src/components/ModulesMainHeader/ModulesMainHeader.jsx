@@ -6,7 +6,7 @@ import { CONTROL_AGUAS_VIEW, PATIENTS_VIEW } from '../../views';
 
 import './ModulesMainHeader.css';
 
-export const ModulesMainHeader = props => {
+export const ModulesMainHeader = () => {
 
   const [selected, setSelected] = useState(0)
 
@@ -15,9 +15,6 @@ export const ModulesMainHeader = props => {
       <BottomNavigation
         showlabels={'true'}
         value={selected}
-      // onChange={(event, newValue) => {
-      //     setValue(newValue);
-      // }}
       >
         <BottomNavigationAction label='Pacientes' icon={<PeopleAltIcon />} onClick={() => setSelected(0)} />
         <BottomNavigationAction label='Aguas' icon={<OpacityIcon />} onClick={() => setSelected(1)} />
