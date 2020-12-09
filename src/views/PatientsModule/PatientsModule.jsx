@@ -10,12 +10,15 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 import SlidingPane from "react-sliding-pane";
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 import PatientForm from '../../components/patients/PatientForm'
+import { useTranslation } from 'react-i18next';
+
 
 
 
 const PatientsModule = () => {
   const [newPatientClicked, setNewPatientClicked] = useState(false);
   const { path, url } = useRouteMatch();
+  const {t} = useTranslation()
 
   const [paneOpen, setPaneOpen] = useState(false)
 
@@ -32,7 +35,7 @@ const PatientsModule = () => {
               variant='contained'
               color='primary'
             >
-              Nuevo paciente
+              {t("new_patient", "Neue PAtientung")}
             </Button>
           </Box>
         </Box>
