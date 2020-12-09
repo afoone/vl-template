@@ -6,10 +6,12 @@ import { useDispatch } from 'react-redux'
 import { getPatientById } from '../../api/patientsApi'
 import { useForm } from 'react-hook-form'
 import Select from '../hookform/Select'
+import {useTranslation} from 'react-i18next'
 
 
 const PatientForm = ({ close, id }) => {
 
+    const {t} = useTranslation("patient")
     const { register, handleSubmit, watch, errors, reset, control } = useForm();
 
     const dispatch = useDispatch()
@@ -38,13 +40,13 @@ const PatientForm = ({ close, id }) => {
                 <TextField
                     name="nombre" inputRef={register({ required: true })}
                     error={!!errors.nombre} helperText={errors.nombre && "El nombre es requerido"}
-                    label={"Nombre"}>
+                    label={t("name")}>
                 </TextField>
 
                 <TextField name="apellidos"
                     inputRef={register({ required: true })}
                     error={!!errors.apellidos} helperText={errors.apellidos && "El apellido es requerido"}
-                    label={"Apellidos"} />
+                    label={t("family_name")} />
 
                 <TextField label="Número de registro" name="nreg" inputRef={register} ></TextField>
                 <TextField label="Número de Seguridad Social" name="nss" inputRef={register}  ></TextField>
@@ -56,8 +58,8 @@ const PatientForm = ({ close, id }) => {
                 <TextField label="Fecha de nacimiento" name="fnac" type="date" inputRef={register} InputLabelProps={{ shrink: true }}></TextField>
                 <TextField label="Turno" name="turno" type="number" inputRef={register} ></TextField>
                 <Select label="Sexo" name="sexo" inputRef={register} control={control}>
-                    <MenuItem value="Hombre">Hombre</MenuItem>
-                    <MenuItem value="Mujer">Mujer</MenuItem>
+                    <MenuItem value="Hombre">{t("man")}</MenuItem>
+                    <MenuItem value="Mujer">{t("woman")}</MenuItem>
                 </Select>
                 <div className="buttons">
                     <Button type="submit" variant="contained" color="primary"  >Grabar</Button>
