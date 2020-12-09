@@ -10,15 +10,17 @@ import { SelectCellEditor } from 'ag-grid-community';
 import { useSelector } from 'react-redux';
 import ButtonsClickRenderer from '../tables/ButtonsClickRenderer'
 import { useTranslation } from 'react-i18next';
+import { Input } from '@material-ui/core';
 
 
 
 const PatientList = ({ edit }) => {
 
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
     const [gridApi, setGridApi] = useState(null);
     const [gridColumnApi, setGridColumnApi] = useState(null);
+    const [quickFilter, setQuickFilter] = useState("")
 
     const editElement = id => {
         console.log("editar elemento ", id)
@@ -38,10 +40,17 @@ const PatientList = ({ edit }) => {
 
     return (
         <div style={{ width: '100%', height: '100%' }}>
+            <div style={{ display: "inline-block", width: "100%", marginTop: 10, marginBottom: 10 }}>
+                <div style={{ float: "right", marginRight: 40 }}>
+                    <Input type="text" id="quickFilter" onChange={e => setQuickFilter(e.target.value)} value={quickFilter}
+                        placeholder="Buscar en todo" />
+                </div>
+            </div>
 
             <div className="ag-theme-alpine" style={{ height: "100%", width: "100%" }}>
                 <AgGridReact
                     onGridReady={onGridReady}
+                    quickFilterText={quickFilter}
                     rowData={patients}
                     rowSelection="multiple"
                     onFirstDataRendered={onFirstDataRendered}
@@ -56,7 +65,6 @@ const PatientList = ({ edit }) => {
                         edit: id => edit(id)
                     }}
                 >
-
                     <AgGridColumn sortable={true} filter={true} field="id" checkboxSelection={true}></AgGridColumn>
                     <AgGridColumn sortable={true} filter={true} field="nombre"></AgGridColumn>
                     <AgGridColumn sortable={true} filter={true} field="apellidos"></AgGridColumn>

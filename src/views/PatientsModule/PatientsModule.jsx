@@ -35,7 +35,7 @@ const PatientsModule = () => {
               variant='contained'
               color='primary'
             >
-              {t("new_patient", "Neue PAtientung")}
+              {t("new_patient", "Neue Patientung")}
             </Button>
           </Box>
         </Box>

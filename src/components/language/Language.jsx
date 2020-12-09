@@ -4,7 +4,6 @@ import i18n from '../../i18n'
 import { IconFlagUK, IconFlagES } from 'material-ui-flags'
 
 export const Language = () => {
-    console.log("language", i18n.language)
 
     const [language, setLanguage] = useState(i18n.language || "es")
 
@@ -15,7 +14,6 @@ export const Language = () => {
 
     return (
         <div>
-
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
@@ -25,9 +23,6 @@ export const Language = () => {
                 <MenuItem value="es"><IconFlagES /> </MenuItem>
                 <MenuItem value="en"><IconFlagUK /> </MenuItem>
             </Select>
-
-
-
         </div>
     )
 }
