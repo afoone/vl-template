@@ -19,3 +19,5 @@ export const AxiosSingleton = (function () {
     }
   };
 })();
+
+export default AxiosSingleton
