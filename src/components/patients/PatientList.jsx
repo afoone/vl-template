@@ -9,9 +9,13 @@ import GenderCellRenderer from '../../components/tables/GenderCellRenderer'
 import { SelectCellEditor } from 'ag-grid-community';
 import { useSelector } from 'react-redux';
 import ButtonsClickRenderer from '../tables/ButtonsClickRenderer'
+import { useTranslation } from 'react-i18next';
+
 
 
 const PatientList = ({ edit }) => {
+
+    const {t} = useTranslation()
 
     const [gridApi, setGridApi] = useState(null);
     const [gridColumnApi, setGridColumnApi] = useState(null);
@@ -66,7 +70,7 @@ const PatientList = ({ edit }) => {
                         cellRenderer="genderCellRenderer"
                         cellEditor="agSelectCellEditor"
                         cellEditorParams={{
-                            values: ['Hombre', 'Mujer'],
+                            values: [t('man'), t('woman')],
                             cellRenderer: 'genderCellRenderer',
                         }}
                     ></AgGridColumn>
