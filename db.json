@@ -13,9 +13,15 @@
   "users": [
     {
       "id": 1,
-      "name": "Javi",
+      "name": "javi",
       "password": "javi",
-      "rol": "admin"
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "user",
+      "password": "user",
+      "role": "doctor"
     }
   ],
   "patients": [

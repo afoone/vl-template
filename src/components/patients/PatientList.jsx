@@ -21,6 +21,7 @@ const PatientList = ({ edit }) => {
     const [gridApi, setGridApi] = useState(null);
     const [gridColumnApi, setGridColumnApi] = useState(null);
     const [quickFilter, setQuickFilter] = useState("")
+    const user = useSelector(state => state.auth.user)
 
     const editElement = id => {
         console.log("editar elemento ", id)
@@ -55,7 +56,7 @@ const PatientList = ({ edit }) => {
                     rowSelection="multiple"
                     onFirstDataRendered={onFirstDataRendered}
                     defaultColDef={{
-                        resizable: true, editable: true, floatingFilter: true
+                        resizable: true, editable: user.role === "admin", floatingFilter: true
                     }}
                     frameworkComponents={{
                         genderCellRenderer: GenderCellRenderer,

@@ -1,6 +1,7 @@
 import { Button, Menu, MenuItem } from '@material-ui/core'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next';
+import AdminPermissionHOC from '../../auth/AdminPermissionHOC';
 
 
 const ButtonsClickRenderer = ({ context, value }) => {
@@ -33,7 +34,9 @@ const ButtonsClickRenderer = ({ context, value }) => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={() => edit(value)}>{t("edit")}</MenuItem>
+                <AdminPermissionHOC>
+                    <MenuItem onClick={() => edit(value)}>{t("edit")}</MenuItem>
+                </AdminPermissionHOC>
             </Menu>
         </div>
     )
