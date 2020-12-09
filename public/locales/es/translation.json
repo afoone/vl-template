@@ -1,3 +1,7 @@
 {
-    "new_patient": "Nuevo Paciente"
+    "new_patient": "Nuevo Paciente",
+    "man": "Hombre",
+    "woman":"Mujer",
+    "patients": "Pacientes",
+    "edit":"Editar"
 }

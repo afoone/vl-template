@@ -1,3 +1,7 @@
 {
-    "new_patient": "New Patient"
+    "new_patient": "New Patient",
+    "man": "Man",
+    "woman":"Woman",
+    "patients": "Patients",
+    "edit":"Edit"
 }

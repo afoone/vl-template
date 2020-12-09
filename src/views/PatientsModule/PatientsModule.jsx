@@ -27,7 +27,7 @@ const PatientsModule = () => {
       {newPatientClicked && <Redirect to={`${path}/new`} />}
       <Box display='flex' flexGrow='1' flexDirection='column'>
         <Box display='flex' justifyContent='space-between'>
-          <Title title="Pacientes" />
+          <Title title="patients" />
           <Box display="flex" alignItems="right" style={{ padding: "0.5rem", marginLeft: "1rem" }}>
 
             <Button
