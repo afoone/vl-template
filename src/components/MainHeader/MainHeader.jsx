@@ -2,7 +2,7 @@ import React from 'react'
 import { Logout } from '../Logout/Logout';
 import { MainLogo } from '../MainLogo/MainLogo';
 import { ModulesMainHeader } from '../ModulesMainHeader/ModulesMainHeader';
-import Language from '../Language/Language'
+import Language from '../language/Language'
 import { AppBar, Box, Button, Toolbar } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
@@ -22,7 +22,9 @@ const MainHeader = ({ changeView }) => {
                     <MainLogo />
                     <ModulesMainHeader changeView={changeView} />
                     {!user.name && <Redirect to="/login" />}
+                    <Language/>
                     <Box ml='auto'>
+                       
                         <Button onClick={() => dispatch(logout())}>
                             {user.name}
                             <Logout />
