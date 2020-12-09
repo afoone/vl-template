@@ -63,7 +63,7 @@ const PatientList = ({ edit }) => {
                         SelectCellEditor, ButtonsClickRenderer
                     }}
                     context={{
-                        edit: id => edit(id)
+                        edit: (id, viewMode) => edit(id, viewMode)
                     }}
                 >
                     <AgGridColumn sortable={true} filter={true} field="id" checkboxSelection={true}></AgGridColumn>

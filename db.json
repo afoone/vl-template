@@ -1,21 +1,21 @@
 {
   "modules": [
     {
-      "name":"patients",
-      "enabled":true
+      "name": "patients",
+      "enabled": true
     },
     {
-      "name":"water",
-      "enabled":false
+      "name": "water",
+      "enabled": false
     }
-
   ],
   "users": [
     {
       "id": 1,
       "name": "javi",
       "password": "javi",
-      "role": "admin"
+      "role": "admin",
+      "language": "en"
     },
     {
       "id": 2,

@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT, ERROR } from '../actions/auth'
+import { LOGIN, LOGOUT, ERROR , UPDATE} from '../actions/auth'
 
 const initialState = {
     user: {},
@@ -8,6 +8,8 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case LOGIN:
+            return { ...state, user: action.payload, error: undefined }
+        case UPDATE:
             return { ...state, user: action.payload, error: undefined }
         case LOGOUT:
             return { ...state, user: {}, error: undefined }

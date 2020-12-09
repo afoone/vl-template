@@ -1,4 +1,4 @@
-import { ERROR, LOGIN, LOGOUT } from '../actions/auth'
+import { ERROR, LOGIN, LOGOUT, UPDATE } from '../actions/auth'
 import authReducer from './authReducer'
 
 test(
@@ -28,6 +28,21 @@ test(
             }
         }
         const state = authReducer(initialState, { type: LOGIN, payload: { name: "Alfonso" } })
+        expect(state.user).toStrictEqual({
+            name: "Alfonso"
+        })
+    }
+)
+
+test(
+    "UPDATE sustituye el usuario en el estado",
+    () => {
+        const initialState = {
+            user: {
+                name: "Javi"
+            }
+        }
+        const state = authReducer(initialState, { type: UPDATE, payload: { name: "Alfonso" } })
         expect(state.user).toStrictEqual({
             name: "Alfonso"
         })

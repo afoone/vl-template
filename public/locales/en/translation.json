@@ -3,5 +3,6 @@
     "man": "Man",
     "woman":"Woman",
     "patients": "Patients",
-    "edit":"Edit"
+    "edit":"Edit",
+    "view": "View"
 }

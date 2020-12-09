@@ -17,8 +17,8 @@ const ButtonsClickRenderer = ({ context, value }) => {
         setAnchorEl(null);
     };
 
-    const edit = value => {
-        context.edit(value);
+    const edit = (value, viewMode) => {
+        context.edit(value, viewMode);
         setAnchorEl(null)
     }
 
@@ -37,6 +37,8 @@ const ButtonsClickRenderer = ({ context, value }) => {
                 <AdminPermissionHOC>
                     <MenuItem onClick={() => edit(value)}>{t("edit")}</MenuItem>
                 </AdminPermissionHOC>
+                <MenuItem onClick={() => edit(value, true)}>{t("view")}</MenuItem>
+
             </Menu>
         </div>
     )

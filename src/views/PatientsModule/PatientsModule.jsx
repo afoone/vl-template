@@ -11,6 +11,7 @@ import SlidingPane from "react-sliding-pane";
 import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 import PatientForm from '../../components/patients/PatientForm'
 import { useTranslation } from 'react-i18next';
+import AdminPermissionHOC from '../../auth/AdminPermissionHOC';
 
 
 
@@ -18,9 +19,10 @@ import { useTranslation } from 'react-i18next';
 const PatientsModule = () => {
   const [newPatientClicked, setNewPatientClicked] = useState(false);
   const { path, url } = useRouteMatch();
-  const {t} = useTranslation()
+  const { t } = useTranslation()
 
   const [paneOpen, setPaneOpen] = useState(false)
+  const [viewMode, setViewMode] = useState(false)
 
   return (
     <>
@@ -29,18 +31,23 @@ const PatientsModule = () => {
         <Box display='flex' justifyContent='space-between'>
           <Title title="patients" />
           <Box display="flex" alignItems="right" style={{ padding: "0.5rem", marginLeft: "1rem" }}>
-
-            <Button
-              onClick={() => setPaneOpen(-1)}
-              variant='contained'
-              color='primary'
-            >
-              {t("new_patient", "Neue Patientung")}
-            </Button>
+            <AdminPermissionHOC>
+              <Button
+                onClick={() => setPaneOpen(-1)}
+                variant='contained'
+                color='primary'
+              >
+                {t("new_patient", "Neue Patientung")}
+              </Button>
+            </AdminPermissionHOC>
           </Box>
         </Box>
 
-        <PatientList edit={setPaneOpen} />
+        <PatientList edit={(id, viewMode)=> {
+          setPaneOpen(id);
+          setViewMode(viewMode)
+        }
+        } />
 
       </Box>
       <SlidingPane
@@ -50,7 +57,7 @@ const PatientsModule = () => {
         width="40%"
         onRequestClose={() => setPaneOpen(false)}
       >
-        <PatientForm close={() => setPaneOpen(false)} id={paneOpen} />
+        <PatientForm close={() => setPaneOpen(false)} id={paneOpen} viewMode={viewMode} />
       </SlidingPane>
     </>
   );

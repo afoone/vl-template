@@ -1,13 +1,13 @@
-import { getUserByUsername } from '../../api/usersApi';
+import { getUserByUsername , updateUser} from '../../api/usersApi';
+import i18n from '../../i18n'
 
 //Acciones
-export const LOGIN = "LOGIN";
-export const LOGOUT = "LOGOUT";
+export const LOGIN = "LOGIN"
+export const LOGOUT = "LOGOUT"
 export const ERROR = "ERROR"
+export const UPDATE = "UPDATE"
 
 export const commitLogin = user => {
-
-  console.log("commit login", user)
 
   if (!user || user.name === "" || user.password === "") {
     return {
@@ -23,11 +23,32 @@ export const commitLogin = user => {
   };
 };
 
+export const commitUpdate= user => {
+  return {
+    type: UPDATE,
+    payload: user
+  };
+};
+
 export const loginAsync = (username, password) => {
   return function (dispatch) {
     console.log("login async", username)
     return getUserByUsername(username).then(
-      res => dispatch(commitLogin(res.data[0]))
+      res => {
+        const user = res.data[0]
+        if (user.language) {
+          i18n.changeLanguage(user.language)
+        }
+        return dispatch(commitLogin(user))
+      }
+    )
+  }
+}
+
+export const update = (user) => {
+  return dispatch => {
+    return updateUser(user).then(
+      ({data}) => dispatch(commitUpdate(data))
     )
   }
 }
