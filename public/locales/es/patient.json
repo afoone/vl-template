@@ -2,5 +2,6 @@
     "name": "Nombre",
     "family_name": "Apellidos",
     "man": "Masculino",
-    "woman": "Femenino"
+    "woman": "Femenino",
+    "treatment": "Tratamiento"
 }

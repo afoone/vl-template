@@ -15,7 +15,7 @@
       "name": "javi",
       "password": "javi",
       "role": "admin",
-      "language": "en"
+      "language": "es"
     },
     {
       "id": 2,
@@ -189,6 +189,31 @@
       "fnac": "",
       "turno": "",
       "id": 14
+    },
+    {
+      "nombre": "fdsg",
+      "apellidos": "asd",
+      "nreg": "",
+      "nss": "",
+      "sip": "3423444",
+      "nhist": "",
+      "fnac": "",
+      "turno": "",
+      "tratamientos": [
+        {
+          "value": "asdf"
+        },
+        {
+          "value": "asdf"
+        },
+        {
+          "value": "asdf"
+        },
+        {
+          "value": "adf"
+        }
+      ],
+      "id": 15
     }
   ]
 }

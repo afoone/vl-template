@@ -1,10 +1,10 @@
-import { TextField, MenuItem, Button } from '@material-ui/core'
+import { TextField, MenuItem, Button, Box } from '@material-ui/core'
 import React, { useEffect } from 'react'
 import './PatientForm.css'
 import { addPatient, updatePatient } from '../../redux/actions/patientsActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPatientById } from '../../api/patientsApi'
-import { useForm } from 'react-hook-form'
+import { useForm, useFieldArray } from 'react-hook-form'
 import Select from '../hookform/Select'
 import { useTranslation } from 'react-i18next'
 import AdminPermissionHOC from '../../auth/AdminPermissionHOC'
@@ -14,6 +14,14 @@ const PatientForm = ({ close, id, viewMode }) => {
 
     const { t } = useTranslation("patient")
     const { register, handleSubmit, watch, errors, reset, control } = useForm();
+    const { fields, append, remove } = useFieldArray(
+        {
+            control,
+            name: "tratamientos"
+        }
+    );
+
+    console.log("tratamientos", fields)
 
     const user = useSelector(state => state.auth.user)
 
@@ -23,12 +31,12 @@ const PatientForm = ({ close, id, viewMode }) => {
         if (id > 0) {
             getPatientById(id).then(({ data }) => reset(data))
         }
+
     }, [id])
 
 
 
     const savePatient = patient => {
-        console.log(patient)
         if (id > 0) {
             dispatch(updatePatient(patient))
         } else {
@@ -87,6 +95,32 @@ const PatientForm = ({ close, id, viewMode }) => {
                     </AdminPermissionHOC>
                     <Button variant="contained" color="secondary" onClick={close}>Cancelar</Button>
                 </div>
+                <div className="tratamientos-title">
+                    <h3>Tratamientos</h3>    <Button onClick={e => append({})} >+</Button>
+                </div>
+                <Box className="tratamientos-box">
+                    {
+                        fields.map(
+                            (tratamiento, index) =>
+                                <div className="tratamientos-box">
+                                    <TextField
+                                        label={t("treatment")}
+                                        InputProps={getInputProps()}
+                                        name={`tratamientos[${index}].value`}
+                                        defaultValue={tratamiento.value}
+                                        helperText={errors.tratamientos && errors.tratamientos[index]?.type === "required" && "El campo es requerido"}
+                                        key={tratamiento.id}
+                                        error={errors.tratamientos && errors.tratamientos[index]}
+                                        inputRef={register({ required: true })}
+                                    >{t}</TextField>
+                                    <Button onClick={() => remove(index)}>-</Button>
+                                </div>
+                        )
+                    }
+                </Box>
+
+
+
             </form>
         </div >
     )

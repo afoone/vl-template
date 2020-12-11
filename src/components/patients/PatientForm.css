@@ -11,3 +11,21 @@
     gap: 1rem;
     margin-right: 1rem;
 }
+
+.patient-form .tratamientos-box {
+    display: grid;
+    grid-template-columns: 70% auto;
+}
+
+.patient-form .tratamientos-title {
+    display: grid;
+    grid-template-columns: 70% auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.patient-form .tratamientos-box {
+    grid-template-columns: 70% auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
