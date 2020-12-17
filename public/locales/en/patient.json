@@ -3,5 +3,9 @@
     "family_name": "Family Name",
     "man": "Man",
     "woman": "Woman",
-    "treatment": "Treatment"
+    "treatment": "Treatment",
+    "treatments": "Treatments",
+    "main_data": "Main Data",
+    "other": "Other"
+
 }

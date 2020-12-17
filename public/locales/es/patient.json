@@ -3,5 +3,8 @@
     "family_name": "Apellidos",
     "man": "Masculino",
     "woman": "Femenino",
-    "treatment": "Tratamiento"
+    "treatment": "Tratamiento",
+    "treatments": "Tratamientos",
+    "main_data": "Datos generales",
+    "other": "Otros"
 }

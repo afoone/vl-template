@@ -52,7 +52,7 @@ const PatientsModule = () => {
       </Box>
       <SlidingPane
         closeIcon={<CloseOutlinedIcon />}
-        isOpen={paneOpen}
+        isOpen={!!paneOpen}
         title="Nuevo Paciente"
         width="40%"
         onRequestClose={() => setPaneOpen(false)}

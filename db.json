@@ -29,37 +29,40 @@
       "id": 1,
       "nombre": "Pepe",
       "apellidos": "Garcia M",
-      "nreg": 123124,
-      "nss": 4345,
-      "sip": 123141324235,
-      "nhist": 123412,
+      "nreg": "123124",
+      "nss": "4345",
+      "sip": "123141324",
+      "nhist": "123412",
       "fnac": "2014-02-01",
-      "turno": 1,
-      "sexo": "Hombre"
+      "turno": "1",
+      "sexo": "Hombre",
+      "tratamientos": []
     },
     {
       "id": 2,
       "apellidos": "Garcia M",
       "nombre": "Andrea",
-      "nreg": 123124,
-      "nss": 4345,
-      "sip": 123141324235,
-      "nhist": 123412,
-      "fnac": "09/09/1993",
-      "turno": 1,
-      "sexo": "Hombre"
+      "nreg": "123124",
+      "nss": "4345",
+      "sip": "123141324",
+      "nhist": "123412",
+      "fnac": "2020-12-09",
+      "turno": "1",
+      "sexo": "Hombre",
+      "tratamientos": []
     },
     {
       "id": 3,
       "apellidos": "Garcia M",
       "nombre": "Cristina",
-      "nreg": 123124,
-      "nss": 4345,
-      "sip": 123141324235,
-      "nhist": 123412,
-      "fnac": "09/09/1993",
-      "turno": 1,
-      "sexo": "Hombre"
+      "nreg": "123124",
+      "nss": "4345",
+      "sip": "12314132",
+      "nhist": "123412",
+      "fnac": "2020-12-16",
+      "turno": "1",
+      "sexo": "Mujer",
+      "tratamientos": []
     },
     {
       "id": 4,
@@ -79,141 +82,30 @@
       "apellidos": "dd",
       "nreg": "33",
       "nss": "33",
-      "sip": "3r3",
-      "nhist": "234",
-      "fnac": "2020-12-11",
-      "turno": "1",
-      "sexo": "Hombre"
-    },
-    {
-      "nombre": "dd",
-      "apellidos": "dd",
-      "nreg": "33",
-      "nss": "33",
-      "sip": "3r3",
+      "sip": "3r354656",
       "nhist": "234",
       "fnac": "2020-12-11",
       "turno": "1",
       "sexo": "Mujer",
-      "id": 6
+      "tratamientos": []
     },
     {
-      "nombre": "Alfonso",
-      "apellidos": "Braulio",
-      "nreg": "34342",
-      "nss": "324324",
-      "sip": "342",
-      "nhist": "324",
-      "fnac": "2019-06-05",
-      "turno": "2",
-      "sexo": "Hombre",
-      "id": 7
-    },
-    {
-      "nombre": "dd",
-      "apellidos": "",
-      "nreg": "",
-      "nss": "",
-      "sip": "",
-      "nhist": "",
-      "fnac": "",
-      "turno": "",
-      "sexo": "Hombre",
-      "id": 8
-    },
-    {
-      "nombre": "dd",
-      "apellidos": "",
-      "nreg": "",
-      "nss": "",
-      "sip": "",
-      "nhist": "",
-      "fnac": "",
-      "turno": "",
-      "sexo": "Hombre",
-      "id": 9
-    },
-    {
-      "nombre": "",
-      "apellidos": "",
-      "nreg": "",
-      "nss": "",
-      "sip": "",
-      "nhist": "",
-      "fnac": "",
-      "turno": "",
-      "sexo": "Hombre",
-      "id": 10
-    },
-    {
-      "nombre": "d",
-      "apellidos": "d",
-      "nreg": "d",
-      "nss": "d",
-      "sip": "33",
-      "nhist": "34",
-      "fnac": "2020-12-04",
-      "turno": "2",
-      "id": 11
-    },
-    {
-      "nombre": "Juan",
-      "apellidos": "kldj",
-      "nreg": "sdkjf",
-      "nss": "ldksjl",
-      "sip": "9lksdfjl",
-      "nhist": "kjdsfl",
-      "fnac": "2019-01-01",
-      "turno": "3",
-      "sexo": "Hombre",
-      "id": 12
-    },
-    {
-      "nombre": "",
-      "apellidos": "",
-      "nreg": "",
-      "nss": "",
-      "sip": "",
-      "nhist": "",
-      "fnac": "",
-      "turno": "",
-      "id": 13
-    },
-    {
-      "nombre": "s",
+      "nombre": "sdf",
       "apellidos": "s",
       "nreg": "",
       "nss": "",
-      "sip": "3455667",
+      "sip": "123123232",
       "nhist": "",
-      "fnac": "",
-      "turno": "",
-      "id": 14
-    },
-    {
-      "nombre": "fdsg",
-      "apellidos": "asd",
-      "nreg": "",
-      "nss": "",
-      "sip": "3423444",
-      "nhist": "",
-      "fnac": "",
+      "fnac": "2020-12-10",
       "turno": "",
       "tratamientos": [
         {
-          "value": "asdf"
-        },
-        {
-          "value": "asdf"
-        },
-        {
-          "value": "asdf"
-        },
-        {
-          "value": "adf"
+          "value": "fghfghd"
         }
       ],
-      "id": 15
+      "id": 6,
+      "trinityPerson": "Hombre",
+      "sexo": "Hombre"
     }
   ]
 }

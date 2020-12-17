@@ -1,22 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { AgGridReact } from 'ag-grid-react/lib/agGridReact';
 import { AgGridColumn } from 'ag-grid-react/lib/agGridColumn';
 import 'ag-grid-community';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-import { getAllPatients } from '../../api/patientsApi'
 import GenderCellRenderer from '../../components/tables/GenderCellRenderer'
 import { SelectCellEditor } from 'ag-grid-community';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ButtonsClickRenderer from '../tables/ButtonsClickRenderer'
 import { useTranslation } from 'react-i18next';
 import { Input } from '@material-ui/core';
+import {addPatient} from '../../redux/actions/patientsActions'
 
 
 
 const PatientList = ({ edit }) => {
 
     const { t } = useTranslation()
+
+    const dispatch = useDispatch()
 
     const [gridApi, setGridApi] = useState(null);
     const [gridColumnApi, setGridColumnApi] = useState(null);
@@ -38,6 +40,10 @@ const PatientList = ({ edit }) => {
         params.api.sizeColumnsToFit();
     };
 
+    const updateRow = value => {
+        console.log("row editing stopped", value);
+        
+    }
 
     return (
         <div style={{ width: '100%', height: '100%' }}>
@@ -54,6 +60,7 @@ const PatientList = ({ edit }) => {
                     quickFilterText={quickFilter}
                     rowData={patients}
                     rowSelection="multiple"
+                    onCellEditingStopped={({data}) => updateRow(data)}
                     onFirstDataRendered={onFirstDataRendered}
                     defaultColDef={{
                         resizable: true, editable: user.role === "admin", floatingFilter: true
