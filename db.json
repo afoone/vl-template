@@ -22,6 +22,13 @@
       "name": "user",
       "password": "user",
       "role": "doctor"
+    },
+    {
+      "id": 3,
+      "name": "ivace",
+      "password": "ivace",
+      "role": "admin",
+      "language": "es"
     }
   ],
   "patients": [
@@ -36,7 +43,11 @@
       "fnac": "2014-02-01",
       "turno": "1",
       "sexo": "Hombre",
-      "tratamientos": []
+      "tratamientos": [
+        {
+          "value": "un traytamiento"
+        }
+      ]
     },
     {
       "id": 2,
@@ -106,6 +117,19 @@
       "id": 6,
       "trinityPerson": "Hombre",
       "sexo": "Hombre"
+    },
+    {
+      "sexo": "Hombre",
+      "nombre": "Juanito",
+      "apellidos": "Pérez",
+      "nreg": "98394939",
+      "nss": "345345",
+      "sip": "44554354",
+      "nhist": "",
+      "fnac": "2021-01-05",
+      "turno": "",
+      "tratamientos": [],
+      "id": 7
     }
   ]
 }
