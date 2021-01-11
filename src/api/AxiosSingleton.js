@@ -5,7 +5,7 @@ export const AxiosSingleton = (function () {
 
   function createInstance() {
     var object = axios.create({
-      baseURL: 'http://localhost:8080',
+      baseURL: 'http://api-ivace-poc.test.visual-limes.com:81/',
     });
     return object;
   }

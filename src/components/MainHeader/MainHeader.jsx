@@ -25,7 +25,7 @@ const MainHeader = ({ changeView }) => {
                     <Language/>
                     <Box ml='auto' display="flex">
                             
-                            <Logout onClick={() => dispatch(logout())} >
+                            <Logout >
                             {user.name}
                                 </Logout>
                     </Box>
