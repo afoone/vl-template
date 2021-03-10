@@ -1,5 +1,9 @@
 # NEXT.JS VL TEMPLATE
 
+# how to run
+- test server: `npm run server`
+- client: `npm start`
+
 # todo list
 1. Convert this app to nextjs (not worry about Server Side Rendering or Static Rendering)
 2. Use standard nextjs internacionalization
