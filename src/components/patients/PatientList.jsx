@@ -10,7 +10,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import ButtonsClickRenderer from '../tables/ButtonsClickRenderer'
 import { useTranslation } from 'react-i18next';
 import { Input } from '@material-ui/core';
-import {addPatient} from '../../redux/actions/patientsActions'
 
 
 
