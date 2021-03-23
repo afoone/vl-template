@@ -5,7 +5,25 @@ export const EDIT_PATIENT = 'EDIT_PATIENT';
 export const DELETE_PATIENT = 'REMOVE_PATIENT';
 export const ADD_PATIENTS = 'ADD_PATIENTS';
 export const ADD_PATIENTS_OVERWRITING = 'ADD_PATIENTS_OVERWRITING';
-
+export const SHOW_IS_LOADING = "SHOW_IS_LOADING";
+export const HIDE_IS_LOADING = "HIDE_IS_LOADING";
+// export const showIsLoading = () => {
+//     return {
+//         type: actiontype.SHOW_IS_LOADING
+//     };
+// };
+// export const hideSetTimeOutLoading = () => {
+//     return {
+//         type: actiontype.HIDE_IS_LOADING
+//     };
+// };
+// export const hideIsLoading = () => {
+//     return dispatch => {
+//         setTimeout(() => {
+//             dispatch(hideSetTimeOutLoading());
+//         }, 1000);
+//     };
+// }
 const genericPatientActionCreator = payload => type => ({ type: type, payload: payload });
 
 export const addPatientCommit = patient => genericPatientActionCreator(patient)(ADD_PATIENT);

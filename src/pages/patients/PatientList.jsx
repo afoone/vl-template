@@ -7,7 +7,7 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import GenderCellRenderer from '../../components/tables/GenderCellRenderer'
 import { SelectCellEditor } from 'ag-grid-community';
 import { useSelector, useDispatch } from 'react-redux';
-import ButtonsClickRenderer from '../tables/ButtonsClickRenderer'
+import ButtonsClickRenderer from '../../components/tables/ButtonsClickRenderer'
 import { useTranslation } from 'react-i18next';
 import { Input } from '@material-ui/core';
 

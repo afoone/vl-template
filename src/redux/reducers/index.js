@@ -5,7 +5,8 @@ import patientReducer from './patientsReducer'
 const rootReducer = combineReducers(
     {
         auth: authReducer,
-        patient: patientReducer
+        patient: patientReducer,
+        
     }
 )
 

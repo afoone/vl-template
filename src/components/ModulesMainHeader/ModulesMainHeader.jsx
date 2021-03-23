@@ -4,7 +4,6 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import OpacityIcon from '@material-ui/icons/Opacity';
 import { getModules } from '../../api/modulesApi'
 
-import './ModulesMainHeader.css';
 
 export const ModulesMainHeader = () => {
 

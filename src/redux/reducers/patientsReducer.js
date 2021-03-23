@@ -4,6 +4,7 @@ import {
   EDIT_PATIENT,
   DELETE_PATIENT,
   ADD_PATIENTS_OVERWRITING,
+  
 } from '../actions/patientsActions';
 
 const initialState = {
@@ -28,6 +29,16 @@ const reducer = (state = initialState, action) => {
         ...state,
         patients: patients.filter(p => p.id !== payload),
       };
+    // case SHOW_IS_LOADING:
+    //   return {
+    //     ...state,
+    //     isLoading: true
+    //   };
+    // case HIDE_IS_LOADING:
+    //   return {
+    //     ...state,
+    //     isLoading: false
+    //   };
     default:
       return state;
   }

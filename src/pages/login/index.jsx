@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Paper, TextField, Typography } from '@material-ui/core'
-import './Login.css'
 import { connect, useDispatch, useSelector } from 'react-redux';
-import { loginAsync } from '../../redux/actions/auth'
-import { Redirect } from 'react-router-dom'
-
+import { loginAsync } from '../../redux/actions/auth';
+import { useRouter } from 'next/router';
 
 const Login = props => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const router = useRouter()
     const error = useSelector(state => state.auth.error)
     const user = useSelector(state => state.auth.user)
 
@@ -23,10 +22,14 @@ const Login = props => {
         setFormState({ ...formState, [target.name]: target.value});
     }
 
-
+    useEffect(()=>{
+        if(user.name){
+            router.push("/dashboard")
+        }
+    },[user])
     return (
-        <div className="login">
-            {user.name && <Redirect to="/"/>}
+        <div className="wrapper"><div className="login">
+           
             <Paper
                 elevation={0}
             >
@@ -60,6 +63,7 @@ const Login = props => {
                 </Button>
                 </div>
             </Paper>
+        </div>
         </div>
     )
 }

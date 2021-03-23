@@ -1,6 +1,4 @@
 import React from 'react'
-import './MainLogo.css';
-
 export const MainLogo = () => {
     return (
         <div className='main-logo'>
@@ -9,4 +7,4 @@ export const MainLogo = () => {
                 alt="Logo nefro" />
         </div>
     )
-}
+}   
