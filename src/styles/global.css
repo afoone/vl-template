@@ -1,0 +1,40 @@
+@import "./Login.css";
+@import './Title.css';
+@import "./MainView.css";
+@import "./PatientForm.css";
+@import './MainLogo.css';
+@import './layout-utils.css';
+@import './forms.css';
+@import './MainHeader.css';
+@import './ModulesMainHeader.css';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+body #root{
+    min-width: inherit;
+    min-height: inherit;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: 100vh;
+}

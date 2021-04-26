@@ -15,13 +15,14 @@
       "name": "javi",
       "password": "javi",
       "role": "admin",
-      "language": "es"
+      "language": "en"
     },
     {
       "id": 2,
       "name": "user",
       "password": "user",
-      "role": "doctor"
+      "role": "doctor",
+      "language": "en"
     },
     {
       "id": 3,
@@ -56,11 +57,15 @@
       "nreg": "123124",
       "nss": "4345",
       "sip": "123141324",
-      "nhist": "123412",
+      "nhist": "1234123",
       "fnac": "2020-12-09",
       "turno": "1",
       "sexo": "Hombre",
-      "tratamientos": []
+      "tratamientos": [
+        {
+          "value": "fgdg"
+        }
+      ]
     },
     {
       "id": 3,
@@ -73,19 +78,21 @@
       "fnac": "2020-12-16",
       "turno": "1",
       "sexo": "Mujer",
-      "tratamientos": []
+      "tratamientos": [],
+      "otro": ""
     },
     {
       "id": 4,
       "nombre": "Filomena",
       "apellidos": "Garcia M",
-      "nreg": 123124,
-      "nss": 4345,
-      "sip": 123141324235,
-      "nhist": 123412,
+      "nreg": "123124",
+      "nss": "4345",
+      "sip": "123458548",
+      "nhist": "123412",
       "fnac": "1958-04-02",
-      "turno": 1,
-      "sexo": "Hombre"
+      "turno": "1",
+      "sexo": "Hombre",
+      "tratamientos": []
     },
     {
       "id": 5,

@@ -1,7 +1,6 @@
 import React from 'react'
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import { Typography } from '@material-ui/core'
-import './Title.css'
 import { useTranslation } from 'react-i18next';
 
 

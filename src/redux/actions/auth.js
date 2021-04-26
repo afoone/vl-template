@@ -31,11 +31,13 @@ export const commitUpdate= user => {
 };
 
 export const loginAsync = (username, password) => {
+  // console.log("sdsd",username);
   return function (dispatch) {
     console.log("login async", username)
     return getUserByUsername(username).then(
       res => {
         const user = res.data[0]
+        console.log("user",user)
         if (user.language) {
           i18n.changeLanguage(user.language)
         }

@@ -1,11 +1,11 @@
 import { TextField, MenuItem, Button, Box, Tab, Tabs, Typography } from '@material-ui/core'
 import React, { useEffect } from 'react'
-import './PatientForm.css'
+// import './PatientForm.css'
 import { addPatient, updatePatient } from '../../redux/actions/patientsActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPatientById } from '../../api/patientsApi'
 import { useForm, useFieldArray } from 'react-hook-form'
-import Select from '../hookform/Select'
+import Select from '../../components/hookform/Select'
 import { useTranslation } from 'react-i18next'
 import AdminPermissionHOC from '../../auth/AdminPermissionHOC'
 import { useState } from 'react'
@@ -31,7 +31,7 @@ const TabPanel = props => {
     );
 }
 
-const PatientForm = ({ close, id, viewMode }) => {
+const PatientForm = ({ close, id, viewMode, displayAddMessage }) => {
 
     const { t } = useTranslation("patient")
     const { register, handleSubmit, errors, reset, control, trigger } = useForm({
@@ -84,7 +84,9 @@ const PatientForm = ({ close, id, viewMode }) => {
             } else {
                 dispatch(addPatient(patient))
             }
+            displayAddMessage()
             close()
+
         }
     }
 
@@ -153,14 +155,14 @@ const PatientForm = ({ close, id, viewMode }) => {
                         {
                             fields.map(
                                 (tratamiento, index) =>
-                                    <div className="tratamientos-box"   key={index}>
+                                    <div className="tratamientos-box" key={index}>
                                         <TextField
                                             label={t("treatment")}
                                             InputProps={getInputProps()}
                                             name={`tratamientos[${index}].value`}
                                             defaultValue={tratamiento.value}
                                             helperText={errors.tratamientos && errors.tratamientos[index]?.type === "required" && "El campo es requerido"}
-                                          
+
                                             error={errors.tratamientos && errors.tratamientos[index]}
                                             inputRef={register({ required: true })}
                                         >{t}</TextField>
@@ -183,7 +185,10 @@ const PatientForm = ({ close, id, viewMode }) => {
                     <AdminPermissionHOC>
                         {!viewMode && <Button type="submit" variant="contained" color="primary"  >Grabar</Button>}
                     </AdminPermissionHOC>
-                    <Button variant="contained" color="secondary" onClick={close}>Cancelar</Button>
+                    <Button variant="contained" color="secondary" onClick={() => {
+                        close()
+                        displayAddMessage()
+                    }}>Cancelar</Button>
                 </div>
 
 
